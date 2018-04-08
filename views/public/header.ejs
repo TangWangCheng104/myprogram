@@ -1,0 +1,138 @@
+<!DOCTYPE hmtl>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>浪子树后台管理系统</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/base.css"/>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
+	<script src="/javascripts/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/javascripts/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/javascripts/index.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+	$(".nav-item").click(function(){
+		$(this).find(".nav-link").addClass("active").parent().siblings().find(".nav-link").removeClass("active");
+	})
+	//点击页数
+	//初始定义一些变量
+	var prefix="#list-html5";
+	var apiName="html5";
+	
+	//进入时展示第一页；
+	page.inter (prefix, 1, apiName )
+	changeAside.chage();
+//	prefix =  changeAside.chage();
+//	console.log( changeAside.chage() );
+	
+	//点击第几页时
+	$(".paging .pagimgNum").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		let thisIndex = $(this).index(".paging .pagimgNum");
+		page.changePage(prefix,thisIndex-1,apiName);
+	})
+
+	//点击切换aside
+	$(".list-group-item-action").click(function(){
+		let timer = setTimeout(function(){
+			
+			prefix = changeAside.chage();
+			console.log( prefix )
+			$( prefix + " .paging .pagimgNum").eq(0).addClass("active").siblings().removeClass("active");
+			$( prefix + " .page-inpute").val( 1 );
+			clearTimeout( timer );
+		},100)
+	})
+	
+	//点击上一页下一页首页末页
+	$( " .first-page,.prev-page,.next-page,.last-page,.sure-page").click(function(){
+//		console.log("enter")
+		console.log( prefix )
+		var index ;
+		$( prefix + " .paging .pagimgNum").each(function(){
+			if( $(this).hasClass("active") ){
+				index = $(this).index( prefix + " .paging .pagimgNum");
+			}
+		});
+		//第一页
+		if( $(this).hasClass("first-page") ){
+//			console.log( "第一页" )
+			page.changePage( prefix,1,apiName )
+			$( prefix + " .paging .pagimgNum").eq(0).addClass("active").siblings().removeClass("active");
+			$( prefix + " .page-inpute").val(1);
+		}
+		//上一页
+		else if( $( this ).hasClass("prev-page") ){
+//			console.log( "上一页" )
+			
+			if( index > 0 ){
+				page.changePage( prefix, index,apiName )
+				$( prefix + " .paging .pagimgNum").eq(index-1).addClass("active").siblings().removeClass("active");
+				$( prefix + " .page-inpute").val( index );
+			}
+		}
+		//下一页
+		else if( $(this).hasClass("next-page") ){
+			page.changePage( prefix, index + 2,apiName )
+			$( prefix + " .paging .pagimgNum").eq(index + 1).addClass("active").siblings().removeClass("active");
+			$( prefix + " .page-inpute").val( index + 1 );
+		}
+		//末页
+		else if( $(this).hasClass("last-page") ){
+//			console.log("末页")
+			let pageLength = parseInt( $(".total-page").html() );
+			page.changePage( prefix, pageLength,apiName )
+			$( prefix + " .paging .pagimgNum").eq( pageLength -1 ).addClass("active").siblings().removeClass("active");
+			$( prefix + " .page-inpute").val( pageLength );
+//			page.changePage( pageLength - 1 )
+			
+		}
+		//跳转页面
+		else if( $(this).hasClass("sure-page") ){
+			
+			let pageLength = parseInt( $( prefix + " .page-input").val() );
+			let regNum = /^[0-9]*$/ig;
+//			console.log( regNum.test( pageLength ) );
+//			console.log( pageLength );
+			
+			if( regNum.test( pageLength ) ){
+//				console.log("entry")
+				page.changePage( prefix, pageLength,apiName );
+				$( prefix + " .paging .pagimgNum").eq( pageLength - 1 ).addClass("active").siblings().removeClass("active");
+			
+			}
+		}
+		
+	})
+})
+	</script>
+</head>
+<body>
+	<header>
+		<ul class="nav nav-pills nav-fill nav-header row">
+		  <li class="nav-item">
+		    <a class="nav-link nav-list active" href="#">html5</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link nav-list" href="#">css3</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link nav-list" href="#">javascript</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link nav-list" href="#">vue</a>
+		  </li> 
+		  <li class="nav-item">
+		    <a class="nav-link nav-list" href="#">微信小程序</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link nav-list" href="#">weex</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link nav-list" href="#">前端面试题汇总</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link nav-list" href="#">留言</a>
+		  </li>
+		</ul>
+	</header>

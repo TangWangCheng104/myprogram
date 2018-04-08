@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//原生js获取数据ajax
+	function createXhr() {
+		if(window.XMLHttpRequest){
+			return new XMLHttpRequest();
+		}
+		return new ActiveXObject("Microsoft.XMLHTTP")
+	}
+	var xhr = createXhr();
+	//get,同步
+	var url = "http://192.168.1.163:4100/api/testApi?id=3";
+	
+	xhr.open("get",url,false);
+	
+	xhr.send(null);
+	
+	console.log( xhr.responseText )
+	
+	
+	//post
+	var postUrl = "http://192.168.1.163:4100/api/postApi";
+	
+	let sendData = {name:"6",password:'1125'};
+	
+	xhr.open("post",postUrl,true);
+	
+	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+	xhr.send( 'name='+sendData.name+'&password='+ sendData.password );
+	
+	xhr.onreadystatechange = function(){
+		if( xhr.status == 200 && xhr.readyState == 4 ){
+			console.log("异步请求");
+			console.log( xhr.responseText );
+		}
+	}
+	let list = [1,2,3]
+	list.forEach(function(value,index,arr){
+		console.log(index)
+	})
+</script>

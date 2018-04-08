@@ -1,0 +1,9 @@
+.nav-header{
+	background: #222;
+}
+.nav-list{
+	color: #9D9D9D;	
+}
+.nav-list:hover{
+	color: #fff;
+}

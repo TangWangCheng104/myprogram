@@ -1,0 +1,163 @@
+<!DOCTYPE hmtl>
+<head>
+	<meta charset="utf-8"/>
+	<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+	<link rel="stylesheet" type="text/css" href="../../public/stylesheets/base.css"/>
+	
+	<title>浪子数后台登录</title>
+</head>
+<body>
+	<div class="wrap">
+		<div class="form-wrap">
+			<p1 class="welcome">欢迎!</p1>
+			<form action="" method="post" class="form">
+				<ol class="login-list">
+					<li class="title">
+						登录浪子树后台管理系统
+					</li>
+					<li class="list">
+						<span class="border">　用户名　<input type="text" id="username" placeholder="请输入用户名" /></span>
+					</li>
+					<li class="list">
+						<span class="border">　密　码　<input type="text" id="password" placeholder="请输入密码" /></span>
+					</li>
+					<li class="list">
+						<span class="border border-width">
+							<span class="code-border">　<input class="input-code" type="text" placeholder="请输入验证码" /></span>
+							<span id="code" class="code" onclick="login.enter()"></span>
+						</span>
+					</li>
+					<li class="remember">
+						<input type="checkbox" id="remember" checked="checked" />记住我<span class="login-btn" onclick="login.submit()">登录</span>
+					</li>
+				</ol>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+<style type="text/css">
+	html,body,.wrap{
+		height: 100%;
+		width: 100%;
+	}
+	body{
+		background: url(../../public/images/bgImg.jpg) no-repeat center center/cover;
+	}
+	.welcome{
+		font-size: 36px;
+		color:#333;
+		text-align: center;
+		display: block;
+		margin-bottom: 2rem;
+		font-weight: bold;
+	}
+	.form-wrap{
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	.form{
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 50%;
+		border-radius: 5px;
+		font-size: 16px;
+		color: #333;
+		background: #fff;
+	}
+	.title{
+		height: 6rem;
+		line-height: 6rem;
+		text-align: center;
+		border-bottom: 1px solid #d7d7d7;
+	}
+	.login-list{
+		border-radius: 10px;
+	}
+	.list{
+		height: 5rem;
+		line-height: 5rem;
+		padding-top: 4rem;
+	}
+	.list input{
+		border: none;
+		outline: none;
+		
+	}
+	.list　input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	    color:#fff;
+	}
+	.list　input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color:#fff;
+	}
+	.list　input::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color:#fff;
+	}
+	.list　input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	   color:#fff;
+	}
+	.border{
+		display: inline-block;
+		border: 1px solid #d7d7d7;
+		box-sizing: border-box;
+		height: 5rem;
+		line-height: 5rem;
+		width: 80%;
+		margin-left: 10%;
+	}
+	.remember{
+		display: inline-block;
+		padding-top: 4rem;
+		margin-left: 10%;
+		width: 80%;
+		margin-bottom: 4rem;
+		text-align: center;
+	}
+	.code-border{
+		width: 60%;
+		display: inline-block;
+		margin-right: 5%;
+		border: 1px solid #d7d7d7;
+		height: 5rem;
+		line-height: 5rem;
+		box-sizing: border-box;
+		border-radius: 10px;
+		
+	}
+	.code{
+		display: inline-block;
+		border: 1px solid #d7d7d7;
+		width: 33%;
+		text-align: center;
+	}
+	.border-width{
+		border: none;
+	}
+	.login-btn{
+		display: inline-block;
+		width: 30%;
+		height: 5rem;
+		line-height: 5rem;
+		background: #31b0d5;
+		color: #fff;
+		border-radius: 10px;
+		font-size: 18px;
+		margin-left: 2rem;
+	}
+	.remember input[type="checkbox"]{
+		margin-right: 1rem;
+		width: 1rem;
+		height: 1rem;
+		transform: translateY(4px);
+	}
+</style>
+<script src="../../public/javascripts/jquery.min.js"></script>
+<script src="../../public/javascripts/index.js"></script>
+<script>
+	$(function(){
+		login.enter();
+	})
+</script>

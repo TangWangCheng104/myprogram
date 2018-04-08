@@ -1,0 +1,304 @@
+	<aside>
+		<div class="row">
+		  <div class="col-2">
+		    <div class="list-group" id="list-tab" role="tablist">
+		      <a class="list-group-item list-group-item-action active" id="list-html5-list" data-toggle="list" href="#list-html5" role="tab" aria-controls="html5">html5</a>
+		      <a class="list-group-item list-group-item-action" id="list-css3-list" data-toggle="list" href="#list-css3" role="tab" aria-controls="css3">css3</a>
+		      <a class="list-group-item list-group-item-action" id="list-js-list" data-toggle="list" href="#list-js" role="tab" aria-controls="js">js</a>
+		      <a class="list-group-item list-group-item-action" id="list-vue-list" data-toggle="list" href="#list-vue" role="tab" aria-controls="vue">vue</a>
+		      <a class="list-group-item list-group-item-action" id="list-wechat-list" data-toggle="list" href="#list-wechat" role="tab" aria-controls="wechat">微信小程序</a>
+		      <a class="list-group-item list-group-item-action" id="list-weex-list" data-toggle="list" href="#list-weex" role="tab" aria-controls="weex">weex</a>
+		      <a class="list-group-item list-group-item-action" id="list-interviewProgram-list" data-toggle="list" href="#list-interviewProgram" role="tab" aria-controls="interviewProgram">前端面试题汇总</a>
+		      <a class="list-group-item list-group-item-action" id="list-leaveMsg-list" data-toggle="list" href="#list-leaveMsg" role="tab" aria-controls="leaveMsg">留言</a>
+		    </div>
+		  </div>
+		  <div class="col-10">
+		    <div class="tab-content" id="nav-tabContent">
+		      <div class="tab-pane fade show active" id="list-html5" role="tabpanel" aria-labelledby="list-html5-list">
+		      	<ul class="title-wrap">
+		      		<li class="title">id</li>
+		      		<li class="title">标题</li>
+		      		<li class="title">作者</li>
+		      		<li class="title">发布日期</li>
+		      		<li class="title">浏览数</li>
+		      		<li class="title">内容</li>
+		      		<li class="title">留言</li>
+		      		<li class="title">操作</li>
+		      	</ul>
+		      	<form action="/" method="post" class="content-form">
+		      		
+		      	</form>
+		      	<!--分页模块-->
+		      	<div class="paging-wrap">
+		      		<a class="first-page" href="javascript:;">首页</a>
+	      			<a class="prev-page" href="javascript:;">上一页</a>
+		      		<ul class="paging">
+		      			<% for(let i = 0 ;i < totalDataLength ;i++ ){ %>
+		      			<li class="pagimgNum"><%= (i+1) %></li>
+		      			<% } %>
+		      		</ul>
+		      		<a class="next-page" href="javascript:;">下一页</a>
+		      		<a class="last-page" href="javascript:;">末页</a>
+		      		<span class="page-input-wrap" id="inputPage"><input class="page-input" type="text" value=1 />/<span class="total-page"><%=totalDataLength%></span></span>
+		      		<span class="sure-page">确定</span>
+		      	</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-css3" role="tabpanel" aria-labelledby="list-css3-list">
+		      	<ul class="title-wrap" id="title">
+		      		<li class="title">id</li>
+		      		<li class="title">标题</li>
+		      		<li class="title">作者</li>
+		      		<li class="title">发布日期</li>
+		      		<li class="title">浏览数</li>
+		      		<li class="title">内容</li>
+		      		<li class="title">留言</li>
+		      		<li class="title">操作</li>
+		      	</ul>
+		      	<form action="/" method="post" class="content-form"></form>
+		      	<!--分页模块-->
+		      	<div class="paging-wrap">
+		      		<a class="first-page" href="javascript:;">首页</a>
+	      			<a class="prev-page" href="javascript:;">上一页</a>
+		      		<ul class="paging">
+		      			<% for(let i = 0 ;i < totalDataLength ;i++ ){ %>
+		      			<li class="pagimgNum"><%= (i+1) %></li>
+		      			<% } %>
+		      		</ul>
+		      		<a class="next-page" href="javascript:;">下一页</a>
+		      		<a class="last-page" href="javascript:;">末页</a>
+		      		<span class="page-input-wrap" id="inputPage"><input class="page-input" type="text" value=1 />/<span class="total-page"><%=totalDataLength%></span></span>
+		      		<span class="sure-page">确定</span>
+		      	</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-js" role="tabpanel" aria-labelledby="list-js-list">
+		      	<ul class="title-wrap" id="title">
+		      		<li class="title">id</li>
+		      		<li class="title">标题</li>
+		      		<li class="title">作者</li>
+		      		<li class="title">发布日期</li>
+		      		<li class="title">浏览数</li>
+		      		<li class="title">内容</li>
+		      		<li class="title">留言</li>
+		      		<li class="title">操作</li>
+		      	</ul>
+		      	<form action="/" method="post" class="content-form"></form>
+		      	<!--分页模块-->
+		      	<div class="paging-wrap">
+		      		<a class="first-page" href="javascript:;">首页</a>
+	      			<a class="prev-page" href="javascript:;">上一页</a>
+		      		<ul class="paging">
+		      			<% for(let i = 0 ;i < totalDataLength ;i++ ){ %>
+		      			<li class="pagimgNum"><%= (i+1) %></li>
+		      			<% } %>
+		      		</ul>
+		      		<a class="next-page" href="javascript:;">下一页</a>
+		      		<a class="last-page" href="javascript:;">末页</a>
+		      		<span class="page-input-wrap" id="inputPage"><input class="page-input" type="text" value=1 />/<span class="total-page"><%=totalDataLength%></span></span>
+		      		<span class="sure-page">确定</span>
+		      	</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-vue" role="tabpanel" aria-labelledby="list-vue-list">
+		      	<ul class="title-wrap" id="title">
+		      		<li class="title">id</li>
+		      		<li class="title">标题</li>
+		      		<li class="title">作者</li>
+		      		<li class="title">发布日期</li>
+		      		<li class="title">浏览数</li>
+		      		<li class="title">内容</li>
+		      		<li class="title">留言</li>
+		      		<li class="title">操作</li>
+		      	</ul>
+		      	<form action="/" method="post" class="content-form"></form>
+		      	<!--分页模块-->
+		      	<div class="paging-wrap">
+		      		<a class="first-page" href="javascript:;">首页</a>
+	      			<a class="prev-page" href="javascript:;">上一页</a>
+		      		<ul class="paging">
+		      			<% for(let i = 0 ;i < totalDataLength ;i++ ){ %>
+		      			<li class="pagimgNum"><%= (i+1) %></li>
+		      			<% } %>
+		      		</ul>
+		      		<a class="next-page" href="javascript:;">下一页</a>
+		      		<a class="last-page" href="javascript:;">末页</a>
+		      		<span class="page-input-wrap" id="inputPage"><input class="page-input" type="text" value=1 />/<span class="total-page"><%=totalDataLength%></span></span>
+		      		<span class="sure-page">确定</span>
+		      	</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-wechat" role="tabpanel" aria-labelledby="list-wechat-list">
+		      	<ul class="title-wrap" id="title">
+		      		<li class="title">id</li>
+		      		<li class="title">标题</li>
+		      		<li class="title">作者</li>
+		      		<li class="title">发布日期</li>
+		      		<li class="title">浏览数</li>
+		      		<li class="title">内容</li>
+		      		<li class="title">留言</li>
+		      		<li class="title">操作</li>
+		      	</ul>
+		      	<form action="/" method="post" class="content-form"></form>
+		      	<!--分页模块-->
+		      	<div class="paging-wrap">
+		      		<a class="first-page" href="javascript:;">首页</a>
+	      			<a class="prev-page" href="javascript:;">上一页</a>
+		      		<ul class="paging">
+		      			<% for(let i = 0 ;i < totalDataLength ;i++ ){ %>
+		      			<li class="pagimgNum"><%= (i+1) %></li>
+		      			<% } %>
+		      		</ul>
+		      		<a class="next-page" href="javascript:;">下一页</a>
+		      		<a class="last-page" href="javascript:;">末页</a>
+		      		<span class="page-input-wrap" id="inputPage"><input class="page-input" type="text" value=1 />/<span class="total-page"><%=totalDataLength%></span></span>
+		      		<span class="sure-page">确定</span>
+		      	</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-weex" role="tabpanel" aria-labelledby="list-weex-list">
+		      	<ul class="title-wrap" id="title">
+		      		<li class="title">id</li>
+		      		<li class="title">标题</li>
+		      		<li class="title">作者</li>
+		      		<li class="title">发布日期</li>
+		      		<li class="title">浏览数</li>
+		      		<li class="title">内容</li>
+		      		<li class="title">留言</li>
+		      		<li class="title">操作</li>
+		      	</ul>
+		      	<form action="/" method="post" class="content-form"></form>
+		      	<!--分页模块-->
+		      	<div class="paging-wrap">
+		      		<a class="first-page" href="javascript:;">首页</a>
+	      			<a class="prev-page" href="javascript:;">上一页</a>
+		      		<ul class="paging">
+		      			<% for(let i = 0 ;i < totalDataLength ;i++ ){ %>
+		      			<li class="pagimgNum"><%= (i+1) %></li>
+		      			<% } %>
+		      		</ul>
+		      		<a class="next-page" href="javascript:;">下一页</a>
+		      		<a class="last-page" href="javascript:;">末页</a>
+		      		<span class="page-input-wrap" id="inputPage"><input class="page-input" type="text" value=1 />/<span class="total-page"><%=totalDataLength%></span></span>
+		      		<span class="sure-page">确定</span>
+		      	</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-interviewProgram" role="tabpanel" aria-labelledby="list-interviewProgram-list">
+		      	<ul class="title-wrap" id="title">
+		      		<li class="title">id</li>
+		      		<li class="title">标题</li>
+		      		<li class="title">作者</li>
+		      		<li class="title">发布日期</li>
+		      		<li class="title">浏览数</li>
+		      		<li class="title">内容</li>
+		      		<li class="title">留言</li>
+		      		<li class="title">操作</li>
+		      	</ul>
+		      	<form action="/" method="post" class="content-form"></form>
+		      	<!--分页模块-->
+		      	<div class="paging-wrap">
+		      		<a class="first-page" href="javascript:;">首页</a>
+	      			<a class="prev-page" href="javascript:;">上一页</a>
+		      		<ul class="paging">
+		      			<% for(let i = 0 ;i < totalDataLength ;i++ ){ %>
+		      			<li class="pagimgNum"><%= (i+1) %></li>
+		      			<% } %>
+		      		</ul>
+		      		<a class="next-page" href="javascript:;">下一页</a>
+		      		<a class="last-page" href="javascript:;">末页</a>
+		      		<span class="page-input-wrap" id="inputPage"><input class="page-input" type="text" value=1 />/<span class="total-page"><%=totalDataLength%></span></span>
+		      		<span class="sure-page">确定</span>
+		      	</div>
+		      </div>
+		      <div class="tab-pane fade" id="list-leaveMsg" role="tabpanel" aria-labelledby="list-leaveMsg-list">
+		      	<ul class="title-wrap" id="title">
+		      		<li class="title">id</li>
+		      		<li class="title">标题</li>
+		      		<li class="title">作者</li>
+		      		<li class="title">发布日期</li>
+		      		<li class="title">浏览数</li>
+		      		<li class="title">内容</li>
+		      		<li class="title">留言</li>
+		      		<li class="title">操作</li>
+		      	</ul>
+		      	<form action="/" method="post" class="content-form"></form>
+		      	<!--分页模块-->
+		      	<div class="paging-wrap">
+		      		<a class="first-page" href="javascript:;">首页</a>
+	      			<a class="prev-page" href="javascript:;">上一页</a>
+		      		<ul class="paging">
+		      			<% for(let i = 0 ;i < totalDataLength ;i++ ){ %>
+		      			<li class="pagimgNum"><%= (i+1) %></li>
+		      			<% } %>
+		      		</ul>
+		      		<a class="next-page" href="javascript:;">下一页</a>
+		      		<a class="last-page" href="javascript:;">末页</a>
+		      		<span class="page-input-wrap" id="inputPage"><input class="page-input" type="text" value=1 />/<span class="total-page"><%=totalDataLength%></span></span>
+		      		<span class="sure-page">确定</span>
+		      	</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</aside>
+<!--<script type="text/javascript">
+	$('#myList a').on('click', function (e) {
+	    e.preventDefault()
+	    $(this).tab('show')
+	})
+</script>-->
+<style type="text/css">
+	aside{
+		margin-top: 50px;
+	}
+	.title-wrap,.content-wrap{
+		display:flex;
+		display:-webkit-flex;
+		align-items:center;
+		width:100%;
+	}
+	.title,.content{
+		flex:1;
+		white-space: nowrap;
+		width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.paging-wrap,.paging-wrap .title,.paging,.paging .pagimgNum,.sure-page,.sure-page,.page-input,.page-input-wrap{
+		display:flex;
+		display:-webkit-flex;
+		align-items:center;
+		justify-content: center;
+	}
+	.paging .pagimgNum,.sure-page,.page-input{
+		width: 4rem;
+		height: 2rem;
+		cursor: pointer;
+	}
+	.paging .pagimgNum.active{
+		background: #B21F2D;
+		color: #fff;
+	}
+	.paging{
+		margin-bottom:0 ;
+	}
+	.next-page,.prev-page,.last-page,.first-page{
+		padding: 0 1rem;
+	}
+	.page-input-wrap{
+		flex-wrap: nowrap;
+	}
+	.delete,.edit{
+		font-size: 1.4rem;
+		display: inline-block;
+		white-space: nowrap;
+		width: 4rem;
+		height: 2rem;
+		text-align: center;
+		line-height: 2rem;
+		border-radius: .5rem;
+		border: .1rem solid #e1e1e1;
+		color:#333;
+		margin: .5rem;
+		background: #fff;
+	}
+	.delete.active,.edit.active{
+		color: #fff;
+		background: #34CE57;
+	}
+</style>
