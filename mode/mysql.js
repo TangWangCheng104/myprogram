@@ -102,14 +102,14 @@ exports._updataMsql = function( data,tableName,callback ){
 }
 //查
 exports._findSql = function( data,tableName,callback,findCallback ){
-
+//	console.log( data )
 	//条件查询
 	let getFindSqlDate = mysqlConfig.findData( data );
 	console.log( data )
 	
 	let findSqlSlice =  getFindSqlDate.slice(0,-5) ;
 	let findSql = "SELECT * FROM "+tableName+" WHERE " + findSqlSlice;
-	console.log( findSqlSlice )
+	console.log( findSql )
 	//用id查询
 //	let findSql = "SELECT * FROM "+tableName+" WHERE id = 6";
 	
@@ -120,7 +120,8 @@ exports._findSql = function( data,tableName,callback,findCallback ){
 		}
 		console.log("查询数据库成功");
 		console.log("数据库信息：" + result );
-		console.log( callback(error,result) ) 
+		
+//		console.log( callback(error,result) ) 
 		if( callback ){
 			callback(error,result);
 		}

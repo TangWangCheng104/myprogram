@@ -16,14 +16,14 @@
 						登录浪子树后台管理系统
 					</li>
 					<li class="list">
-						<span class="border">　用户名　<input type="text" id="username" placeholder="请输入用户名" /></span>
+						<span class="border">　用户名　<input type="text" flage="false" id="username" onkeyup="login.username(this)" placeholder="请输入用户名" /></span>
 					</li>
 					<li class="list">
-						<span class="border">　密　码　<input type="text" id="password" placeholder="请输入密码" /></span>
+						<span class="border">　密　码　<input type="password" flage="false" id="password" onkeyup="login.password(this)" placeholder="请输入密码" /></span>
 					</li>
 					<li class="list">
 						<span class="border border-width">
-							<span class="code-border">　<input class="input-code" type="text" placeholder="请输入验证码" /></span>
+							<span class="code-border">　<input class="input-code" flage="false" id="codeInput" type="text" onkeyup="login.code(this)" placeholder="请输入验证码" /></span>
 							<span id="code" class="code" onclick="login.enter()"></span>
 						</span>
 					</li>
@@ -34,6 +34,8 @@
 			</form>
 		</div>
 	</div>
+	<!--弹出提示框-->
+	<span id="alertWran" class="alert-wran" style="display: none;">手机号码输入错误</span>
 </body>
 </html>
 <style type="text/css">
@@ -146,12 +148,25 @@
 		border-radius: 10px;
 		font-size: 18px;
 		margin-left: 2rem;
+		cursor: pointer;
 	}
 	.remember input[type="checkbox"]{
 		margin-right: 1rem;
 		width: 1rem;
 		height: 1rem;
 		transform: translateY(4px);
+	}
+	.alert-wran{
+		display: inline-block;
+		padding: .5rem 1rem;
+		font-size: 1.4rem;
+		color: #fff;
+		background: rgba(0,0,0,.7);
+		border-radius: 1rem;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,50%);
 	}
 </style>
 <script src="../../public/javascripts/jquery.min.js"></script>

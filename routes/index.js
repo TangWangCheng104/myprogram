@@ -11,7 +11,11 @@ let mySql = require("../mode/mysql.js");
 // 		console.log( result );
 // 	}
 // })
-
+//权限判断
+//router.get('/', function(req, res) {
+//	//判断
+//	
+//});
 /* GET home page. */
 router.get('/', function(req, res, next) {
 		//连接数据库之后，然后渲染数据

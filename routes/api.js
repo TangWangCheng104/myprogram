@@ -300,35 +300,26 @@ router.post("/leaveMsg",function(req, res, next){
 
 
 //登录接口
-router.post('/login', function(req, res, next) {
-//	mysql._deletData(1,function(error,result){
-//		res.json({"error":error,"result":result})
-//	}); 
+router.post("/login",function(req, res, next){
+	
+	//获取PublicMsg中的属性
 	let	tableName = 'login';
 	let reqBody = req.body;
-	let reqParams = req.params;
-	let reqQuery = req.query;
-	let reqParam = req.param();
 	
-
-	let mathRandom = "";
-	for( let i = 0;i < 4;i++ ){
-		mathRandom += parseInt( Math.random() * 10 ) + "";
-	}
-	let date = date.getTime( new Date() ) + 3600;
-	
-	console.log( date )
-	document.cookie = "code = " + mathRandom +"expires =" + date;
-	console.log( document.cookie )
-	console.log( reqBody );
-	console.log( mathRandom );
-	
-	mysql._updataMsql(reqBody,tableName,function(err,data){
-		res.json({"error":err,"result":data})
-		console.log( data ) 
+	mysql._findSql( reqBody,tableName,function(err,data){
+//		res.json({"error":err,"result":data})
+		console.log(data)
+		let dataLength = data.length;
+		if( dataLength > 0 ){
+			res.json({"status":1,"msg":"存在此用户"})
+		}else{
+			res.json({"status":0,"msg":"用户不存在"})
+		}
+//		console.log( dataUnder );
 	});
 	
-});
+})
+
 
 
 /* GET users listing. */
